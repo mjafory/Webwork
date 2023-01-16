@@ -377,6 +377,14 @@ doc = ["sphinx-rtd-theme (>=1.0.0)", "sphinx-autodoc-typehints (>=1.18.1)", "sph
 dev = ["build (>=0.7.0)", "pytest-timeout (>=2.1.0)", "pytest (>=7.0.1)"]
 
 [[package]]
+name = "sage"
+version = "0.0.0"
+description = ""
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
 name = "toml"
 version = "0.10.2"
 description = "Python Library for Tom's Obvious, Minimal Language"
@@ -478,7 +486,7 @@ testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "flake8 
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.8.0,<3.9"
-content-hash = "f328c469a46d9cb95c79b10c69318f07ccca3f40cc6eb43ef51c87ad2ff1879b"
+content-hash = "6420008e44c86ec1a5806168e62073f1e1e864c01073eca0ea851c5a1657e251"
 
 [metadata.files]
 aiohttp = []
@@ -511,6 +519,7 @@ replit = []
 replit-python-lsp-server = []
 requests = []
 rope = []
+sage = []
 toml = []
 tomli = []
 typing-extensions = []
