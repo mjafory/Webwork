@@ -1,37 +1,18 @@
-# Define the elliptic curve parameters
-a = 952
-b = 873
-p = 2063
-G = EllipticCurve(GF(p),[a,b])
+p = 131
+alpha = 2
+kE = kM = None
+y1 = 48
+y2 = 84
+x1 = 1
 
-# Define the subgroup generator
-P = G((1, 324))
+# Find kE/kM by dividing y1/alpha^kE mod p
+for i in range(1, p):
+    if (pow(alpha, i, p) == y1/alpha):
+        kE = i
+        break
 
-# Alice's private key
-alice_private_key = 31
+# Calculate x2
+x2 = (y2 * pow(y1, p-2, p)) % p
 
-# Bob's private key
-bob_private_key = 19
-
-# Alice's public key
-alice_public_key = alice_private_key*P
-
-print(alice_public_key)
-
-# Bob's public key
-bob_public_key = bob_private_key*P
-
-print(bob_public_key)
-
-# Alice's shared secret
-alice_shared_secret = alice_private_key*bob_public_key
-
-# Bob's shared secret
-bob_shared_secret = bob_private_key*alice_public_key
-
-# The x-coordinate of the shared secret is the same for both parties
-print(alice_shared_secret.xy()[0])
-print(bob_shared_secret.xy()[0])
-
-
-#Copy above the codes to past sage input box following links: https://sagecell.sagemath.org/
+print("Masking key kM: ", kE)
+print("Plaintext x2: ", x2)
